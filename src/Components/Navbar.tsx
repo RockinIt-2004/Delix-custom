@@ -1,48 +1,45 @@
 "use client";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { FormEvent, useEffect } from "react";
 import { UserButton, useAuth } from "@clerk/nextjs";
-
+import { toast } from "react-toastify";
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { userId } = useAuth();
 
-  // Cloudinary PNG-forced URL (serves PNG even though original was AVIF)
-  const logoUrl =
-    "https://res.cloudinary.com/dmyuteh65/image/upload/f_png/v1757330778/logo_iziy1w";
-
   return (
     <div className="px-4 py-5 mx-auto sm:max-w-screen-full md:max-w-full lg:max-w-screen-full md:px-24 lg:px-12 bg-yellow-50">
       <div className="relative flex items-center justify-between">
-        {/* Desktop Logo & Name */}
         <a
           href="/"
           aria-label="Company"
           title="Company"
           className="inline-flex items-center"
         >
-          <Image src={logoUrl} width={50} height={50} alt="Delix Admin Logo" />
+          <Image src="/logo.avif" width={50} height={50} alt="logo" />
           <span className="ml-2 text-xl lg:text-4xl md:text-4xl sm:text-2xl font-mono font-bold tracking-wide text-yellow-900 uppercase">
-            Delix Admin
+            Zomato Admin
           </span>
         </a>
-
-        {/* Desktop Menu */}
         <ul className="flex items-center hidden space-x-8 lg:flex">
           {!userId ? (
-            <Link
-              className="ml-auto py-3 px-6 rounded-full text-center transition bg-gradient-to-b from-yellow-200 to-yellow-300 hover:to-red-300 active:from-yellow-400 focus:from-red-400 md:px-12"
-              href="/sign-in"
-            >
-              Sign In
-            </Link>
+            <>
+              <Link
+                className="ml-auto py-3 px-6 rounded-full text-center transition bg-gradient-to-b from-yellow-200 to-yellow-300 hover:to-red-300 active:from-yellow-400 focus:from-red-400 md:px-12"
+                href="/sign-in"
+              >
+                Sign In
+              </Link>
+            </>
           ) : (
-            <UserButton afterSignOutUrl="/sign-in" />
+            <>
+              <UserButton afterSignOutUrl="/sign-in" />
+            </>
           )}
         </ul>
-
-        {/* Mobile Menu */}
         <div className="lg:hidden">
           <button
             aria-label="Open Menu"
@@ -65,7 +62,6 @@ export const Navbar = () => {
               />
             </svg>
           </button>
-
           {isMenuOpen && (
             <div className="z-50 absolute top-0 left-0 w-full ">
               <div className="p-5 bg-yellow-50 border rounded shadow-sm">
@@ -77,9 +73,14 @@ export const Navbar = () => {
                       title="Company"
                       className="inline-flex items-center"
                     >
-                      <Image src={logoUrl} width={50} height={50} alt="Delix Admin Logo" />
+                      <Image
+                        src="/logo.avif"
+                        width={50}
+                        height={50}
+                        alt="logo"
+                      />
                       <span className="ml-2 text-xl font-mono font-bold tracking-wide text-gray-800 uppercase">
-                        Delix Admin
+                        Zomato Admin
                       </span>
                     </a>
                   </div>
@@ -102,14 +103,18 @@ export const Navbar = () => {
                 <nav>
                   <ul className="space-y-4">
                     {!userId ? (
-                      <Link
-                        className="ml-auto py-3 px-6 rounded-full text-center transition bg-gradient-to-b from-yellow-200 to-yellow-300 hover:to-red-300 active:from-yellow-400 focus:from-red-400 md:px-12"
-                        href="/sign-in"
-                      >
-                        Sign In
-                      </Link>
+                      <>
+                        <Link
+                          className="ml-auto py-3 px-6 rounded-full text-center transition bg-gradient-to-b from-yellow-200 to-yellow-300 hover:to-red-300 active:from-yellow-400 focus:from-red-400 md:px-12"
+                          href="/sign-in"
+                        >
+                          Sign In
+                        </Link>
+                      </>
                     ) : (
-                      <UserButton afterSignOutUrl="/sign-in" />
+                      <>
+                        <UserButton afterSignOutUrl="/sign-in" />
+                      </>
                     )}
                   </ul>
                 </nav>
