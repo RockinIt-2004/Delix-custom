@@ -19,7 +19,7 @@ export const Navbar = () => {
         <a href="/" aria-label="Company" title="Company" className="inline-flex items-center">
           <Image src={logoUrl} width={50} height={50} alt="logo" />
           <span className="ml-2 text-xl lg:text-4xl md:text-4xl sm:text-2xl font-mono font-bold tracking-wide text-yellow-900 uppercase">
-            Zomato Admin
+            Delix Admin
           </span>
         </a>
 
@@ -59,7 +59,7 @@ export const Navbar = () => {
                   <a href="/" aria-label="Company" title="Company" className="inline-flex items-center">
                     <Image src={logoUrl} width={50} height={50} alt="logo" />
                     <span className="ml-2 text-xl font-mono font-bold tracking-wide text-gray-800 uppercase">
-                      Zomato Admin
+                      Delix Admin
                     </span>
                   </a>
                   <button
