@@ -19,7 +19,7 @@ export const Navbar = () => {
           className="inline-flex items-center"
         >
           <Image
-            src="/images/logo.png"
+            src="https://res.cloudinary.com/dmyuteh65/image/upload/v1757330778/logo_iziy1w.avif"
             width={50}
             height={50}
             alt="Delix Admin Logo"
@@ -78,7 +78,7 @@ export const Navbar = () => {
                     className="inline-flex items-center"
                   >
                     <Image
-                      src="/images/logo.png"
+                      src="https://res.cloudinary.com/dmyuteh65/image/upload/v1757330778/logo_iziy1w.avif"
                       width={50}
                       height={50}
                       alt="Delix Admin Logo"
