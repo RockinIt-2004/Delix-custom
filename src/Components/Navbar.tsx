@@ -18,11 +18,12 @@ export const Navbar = () => {
           title="Company"
           className="inline-flex items-center"
         >
-          <Image
+          <img
             src="https://res.cloudinary.com/dmyuteh65/image/upload/v1757330778/logo_iziy1w.avif"
             width={50}
             height={50}
             alt="Delix Admin Logo"
+            className="rounded-full"
           />
           <span className="ml-2 text-xl lg:text-4xl md:text-4xl sm:text-2xl font-mono font-bold tracking-wide text-yellow-900 uppercase">
             Delix Admin
@@ -77,11 +78,12 @@ export const Navbar = () => {
                     title="Company"
                     className="inline-flex items-center"
                   >
-                    <Image
+                    <img
                       src="https://res.cloudinary.com/dmyuteh65/image/upload/v1757330778/logo_iziy1w.avif"
                       width={50}
                       height={50}
                       alt="Delix Admin Logo"
+                      className="rounded-full"
                     />
                     <span className="ml-2 text-xl font-mono font-bold tracking-wide text-gray-800 uppercase">
                       Delix Admin
